@@ -1,4 +1,4 @@
-Welcome on Origashell, this is a windows shell where you can run over 40 linux commands.
+# Welcome on Origashell, this is a windows shell where you can run over 40 linux commands.
 
 You can create own commands by making .dll and put them inside the plugins folder.
 Example code:
@@ -20,5 +20,4 @@ extern "C" __declspec(dllexport)
 ICommand* createCommand() {
     return new HelloCommand();
 }
-
-# dsadasdsa 
+```
