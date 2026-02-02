@@ -1,0 +1,23 @@
+Welcome on Origashell, this is a windows shell where you can run over 40 linux commands.
+
+You can create own commands by making .dll and put them inside the plugins folder.
+Example code:
+```
+#include "pch.h"
+#include "ICommand.h"
+#include <iostream>
+
+class HelloCommand : public ICommand {
+public:
+    std::string name() const override { return "hello"; }
+
+    void execute(const std::vector<std::string>&) override {
+        std::cout << "Hello from DLL command!\n";
+    }
+};
+
+extern "C" __declspec(dllexport)
+ICommand* createCommand() {
+    return new HelloCommand();
+}
+```
