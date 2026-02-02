@@ -5,6 +5,7 @@
 class ICommand {
 public:
     virtual ~ICommand() = default;
-    virtual std::string name() const = 0; // command name like "ls"
+    virtual std::string name() const = 0;
     virtual void execute(const std::vector<std::string>& args) = 0;
 };
+
